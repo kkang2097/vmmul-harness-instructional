@@ -11,9 +11,10 @@ void my_dgemv(int n, double* A, double* x, double* y) {
 
    //Then add our triple for-loop
    for (int i = 0; i < n; i++){
+       y[i] = 0;
      for(int j = 0; j < n; j++){
        //C[i*n + j] = 0;
-        y[i] = y[i] + A[i*n + j] * x[j];
+        y[i] = y[i] + A[j*n + i] * x[j];
      }
    }
 }
