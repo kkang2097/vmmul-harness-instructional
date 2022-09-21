@@ -13,12 +13,12 @@ void my_dgemv(int n, double* A, double* x, double* y) {
 
    //Rows
    for (int i = 0; i < n; i++){
-       y[i] = 0;
+       //y[i] = 0;
 
       //Cols
      for(int j = 0; j < n; j++){
        //C[i*n + j] = 0;
-        y[i] = y[i] + A[j*n + i] * x[j];
+        y[i] = y[i] + A[i*n + j] * x[i];
      }
    }
 }
