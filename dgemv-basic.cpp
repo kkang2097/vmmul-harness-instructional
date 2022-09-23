@@ -18,7 +18,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
       //Cols
      for(int j = 0; j < n; j++){
        //C[i*n + j] = 0;
-        y[i*n] = y[i*n] + A[i*n+j] * x[j];
+        y[i*n] = y[i*n] + A[i*n + j] * x[n*j];
      }
    }
 }
