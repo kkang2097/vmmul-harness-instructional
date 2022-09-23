@@ -13,14 +13,9 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    for (int i = 0; i < n; i++){
      for(int j = 0; j < 1; j++){
        //C[i*n + j] = 0;
-       for(int k = 0; k < n; k++){
-         //
-        //Row major order:
-        //prod[i][j] += A[i][k] + B[k][j]
-        //Column major order:
-        //prod[i][j] += A[k][j] + B[i][k]
-        y[i*n] = y[i*n + j] + A[i*n + k] * x[j*n];
+        y[i] = y[i] + A[i][j] * x[j];
        }
-     }
    }
+
+   
 }
