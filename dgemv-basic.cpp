@@ -10,15 +10,17 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    // insert your code here: implementation of basic matrix multiply
 
    //Then add our triple for-loop
-
-   //Rows
    for (int i = 0; i < n; i++){
-       //y[i] = 0;
-
-      //Cols
      for(int j = 0; j < n; j++){
        //C[i*n + j] = 0;
-        y[i*n] = y[i*n] + A[i*n + j] * x[n*j];
+       for(int k = 0; k < n; k++){
+         //
+        //Row major order:
+        //prod[i][j] += A[i][k] + B[k][j]
+        //Column major order:
+        //prod[i][j] += A[k][j] + B[i][k]
+        y[i*n] = y[i*n + j] + A[i*n + k] * x[j*n];
+       }
      }
    }
 }
