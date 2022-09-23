@@ -11,11 +11,15 @@ void my_dgemv(int n, double* A, double* x, double* y) {
 
    //Then add our triple for-loop
    for (int i = 0; i < n; i++){
-     for(int j = 0; j < 1; j++){
-       //C[i*n + j] = 0;
-        y[i] = y[i] + A[i][j] * x[j];
+       for(int k = 0; k < n; k++){
+         //
+        //Row major order:
+        //prod[i][j] += A[i][k] * B[k][j]
+        //Column major order:
+        //prod[i][j] += A[k][j] * B[i][k]
+        y[i*n] = y[i*n] + A[i*n + k] * x[i*n];
        }
    }
 
-   
+
 }
