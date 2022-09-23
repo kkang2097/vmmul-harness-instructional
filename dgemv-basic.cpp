@@ -17,7 +17,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
         //prod[i][j] += A[i][k] * B[k][j]
         //Column major order:
         //prod[i][j] += A[k][j] * B[i][k]
-        y[i] = y[i] + A[i*n + k] * x[j];
+        y[i] = y[i] + A[i*n + k] * x[i];
        }
    }
 
