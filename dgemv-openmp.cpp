@@ -19,6 +19,18 @@ void my_dgemv(int n, double* A, double* x, double* y) {
       int nthreads = omp_get_num_threads();
       int thread_id = omp_get_thread_num();
       printf("Hello world: thread %d of %d checking in. \n", thread_id, nthreads);
+
+      //Then add our MVM
+      for (int i = 0; i < n; i++){
+          for(int k = 0; k < n; k++){
+            //
+           //Row major order:
+           //prod[i][j] += A[i][k] * B[k][j]
+           //Column major order:
+           //prod[i][j] += A[k][j] * B[i][k]
+           y[i] = y[i] + A[i*n + k] * x[k];
+          }
+      }
    }
 
    // insert your dgemv code here. you may need to create additional parallel regions,
@@ -26,4 +38,3 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    // nthreads and thread_id so as to not taint your timings
 
 }
-

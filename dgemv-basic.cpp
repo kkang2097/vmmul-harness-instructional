@@ -9,7 +9,7 @@ const char* dgemv_desc = "Basic implementation of matrix-vector multiply.";
 void my_dgemv(int n, double* A, double* x, double* y) {
    // insert your code here: implementation of basic matrix multiply
 
-   //Then add our triple for-loop
+   //Then add our MVM
    for (int i = 0; i < n; i++){
        for(int k = 0; k < n; k++){
          //
