@@ -14,7 +14,7 @@ const char* dgemv_desc = "OpenMP dgemv.";
  */
 
 void my_dgemv(int n, double* A, double* x, double* y){
-      #pragma omp parallel {
+      #pragma omp parallel
 
         //Then add our MVM
         #pragma omp for
@@ -30,7 +30,7 @@ void my_dgemv(int n, double* A, double* x, double* y){
         }
 
 
-      }
+
 
 
 
