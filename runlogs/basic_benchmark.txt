@@ -1,0 +1,21 @@
+Working on problem size N=1024 
+
+Our Elapsed time (Seconds): 0.004501073
+Reference Matmul Elapsed time (Seconds): 0.078509741
+Working on problem size N=2048 
+
+Our Elapsed time (Seconds): 0.017996243
+Reference Matmul Elapsed time (Seconds): 0.003358480
+Working on problem size N=4096 
+
+Our Elapsed time (Seconds): 0.071919791
+Reference Matmul Elapsed time (Seconds): 0.013382719
+Working on problem size N=8192 
+
+Our Elapsed time (Seconds): 0.288133446
+Reference Matmul Elapsed time (Seconds): 0.054466719
+Working on problem size N=16384 
+
+Our Elapsed time (Seconds): 1.154610061
+Reference Matmul Elapsed time (Seconds): 0.217125938
+
