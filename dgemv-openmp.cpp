@@ -13,16 +13,16 @@ const char* dgemv_desc = "OpenMP dgemv.";
  * On exit, A and X maintain their input values.
  */
 
-void my_dgemv(int n, double* A, double* x, double* y) {
+void my_dgemv(int n, double* A, double* x, double* y)
 
       int i, k;
 
       #pragma omp parallel for private(i, k) shared (A, x, y) {
 
 
-      int nthreads = omp_get_num_threads();
-      int thread_id = omp_get_thread_num();
-      printf("Hello world: thread %d of %d checking in. \n", thread_id, nthreads);
+      // int nthreads = omp_get_num_threads();
+      // int thread_id = omp_get_thread_num();
+      // printf("Hello world: thread %d of %d checking in. \n", thread_id, nthreads);
       //Then add our MVM
       for ( i = 0; i < n; i++){
           for( k = 0; k < n; k++){
@@ -35,7 +35,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
           }
       }
 
-    }
+
 
 
    // insert your dgemv code here. you may need to create additional parallel regions,
