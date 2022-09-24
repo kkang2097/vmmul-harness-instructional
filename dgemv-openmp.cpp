@@ -14,12 +14,12 @@ const char* dgemv_desc = "OpenMP dgemv.";
  */
 
 void my_dgemv(int n, double* A, double* x, double* y){
-      #pragma omp parallel
+      #pragma omp parallel {
+
         //Then add our MVM
-        double i, k;
         #pragma omp for
-        for ( i = 0; i < n; i++){
-            for( k = 0; k < n; k++){
+        for (int i = 0; i < n; i++){
+            for(int k = 0; k < n; k++){
               //
              //Row major order:
              //prod[i][j] += A[i][k] * B[k][j]
@@ -28,6 +28,10 @@ void my_dgemv(int n, double* A, double* x, double* y){
              y[i] = y[i] + A[i*n + k] * x[k];
             }
         }
+
+
+      }
+
 
 
 
