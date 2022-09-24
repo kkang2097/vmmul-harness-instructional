@@ -40,7 +40,7 @@ void fill(double* p, int n) {
 bool check_accuracy(double *A, double *Anot, int nvalues)
 {
   double eps = 1e-5;
-  for (size_t i = 0; i < nvalues; i++) 
+  for (size_t i = 0; i < nvalues; i++)
   {
     if (fabsf(A[i] - Anot[i]) > eps) {
        return false;
@@ -51,7 +51,7 @@ bool check_accuracy(double *A, double *Anot, int nvalues)
 
 
 /* The benchmarking program */
-int main(int argc, char** argv) 
+int main(int argc, char** argv)
 {
     std::cout << "Description:\t" << dgemv_desc << std::endl << std::endl;
 
@@ -78,7 +78,7 @@ int main(int argc, char** argv)
 
            // load up matrics with some random numbers
     /* For each test size */
-    for (int n : test_sizes) 
+    for (int n : test_sizes)
     {
         printf("Working on problem size N=%d \n", n);
 
@@ -92,20 +92,37 @@ int main(int argc, char** argv)
         memcpy((void *)Ycopy, (const void *)Y, sizeof(double)*n);
 
         // insert start timer code here
-
+        std::chrono::time_point<std::chrono::high_resolution_clock> start =
+        std::chrono::high_resolution_clock::now();
         // call the method to do the work
-        my_dgemv(n, A, X, Y); 
+        my_dgemv(n, A, X, Y);
 
         // insert end timer code here
+        std::chrono::time_point<std::chrono::high_resolution_clock> end
+        = std::chrono::high_resolution_clock::now();
+        std::cout << std::fixed << std::setprecision(9) << std::endl;
+        std::chrono::duration<double> elapsed
+        = end - start;
+        std::cout << "Our Elapsed time (Seconds): " << elapsed.count() << std::endl;
 
-
+        // insert start timer code here
+        std::chrono::time_point<std::chrono::high_resolution_clock> start =
+        std::chrono::high_resolution_clock::now();
         // now invoke the cblas method to compute the matrix-vector multiplye
         reference_dgemv(n, Acopy, Xcopy, Ycopy);
+
+        // insert end timer code here
+        std::chrono::time_point<std::chrono::high_resolution_clock> end
+        = std::chrono::high_resolution_clock::now();
+        std::cout << std::fixed << std::setprecision(9) << std::endl;
+        std::chrono::duration<double> elapsed
+        = end - start;
+        std::cout << "Reference MVM Elapsed time (Seconds): " << elapsed.count() << std::endl;
 
         // compare your result with that computed by BLAS
         if (check_accuracy(Ycopy, Y, n) == false)
            printf(" Error: your answer is not the same as that computed by BLAS. \n");
-    
+
     } // end loop over problem sizes
 
     return 0;
