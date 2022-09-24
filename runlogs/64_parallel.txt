@@ -1,0 +1,46 @@
+Working on problem size N=1024 
+
+Our Elapsed time (Seconds): 0.007457853
+Reference Matmul Elapsed time (Seconds): 0.071123130
+Working on problem size N=2048 
+
+Our Elapsed time (Seconds): 0.000581510
+Reference Matmul Elapsed time (Seconds): 0.000233790
+Working on problem size N=4096 
+
+Our Elapsed time (Seconds): 0.001433860
+Reference Matmul Elapsed time (Seconds): 0.000541870
+Working on problem size N=8192 
+
+Our Elapsed time (Seconds): 0.004861892
+Reference Matmul Elapsed time (Seconds): 0.001950471
+Working on problem size N=16384 
+
+Our Elapsed time (Seconds): 0.018613618
+Reference Matmul Elapsed time (Seconds): 0.007764333
+
+
+\\\\\\\\\\\\\\\\\ Dynamic \\\\\\\\\\\\\\\\\\\\\\
+
+
+Working on problem size N=1024 
+
+Our Elapsed time (Seconds): 0.019700634
+Reference Matmul Elapsed time (Seconds): 0.071432852
+Working on problem size N=2048 
+
+Our Elapsed time (Seconds): 0.000567621
+Reference Matmul Elapsed time (Seconds): 0.000237210
+Working on problem size N=4096 
+
+Our Elapsed time (Seconds): 0.001425161
+Reference Matmul Elapsed time (Seconds): 0.000598331
+Working on problem size N=8192 
+
+Our Elapsed time (Seconds): 0.004850784
+Reference Matmul Elapsed time (Seconds): 0.001966171
+Working on problem size N=16384 
+
+Our Elapsed time (Seconds): 0.018651899
+Reference Matmul Elapsed time (Seconds): 0.007693469
+

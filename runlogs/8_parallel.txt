@@ -1,0 +1,46 @@
+Working on problem size N=1024 
+
+Our Elapsed time (Seconds): 0.001828581
+Reference Matmul Elapsed time (Seconds): 0.058531945
+Working on problem size N=2048 
+
+Our Elapsed time (Seconds): 0.002385991
+Reference Matmul Elapsed time (Seconds): 0.000574940
+Working on problem size N=4096 
+
+Our Elapsed time (Seconds): 0.009167994
+Reference Matmul Elapsed time (Seconds): 0.001893811
+Working on problem size N=8192 
+
+Our Elapsed time (Seconds): 0.036183976
+Reference Matmul Elapsed time (Seconds): 0.007209593
+Working on problem size N=16384 
+
+Our Elapsed time (Seconds): 0.143964181
+Reference Matmul Elapsed time (Seconds): 0.028407282
+Description:	OpenMP dgemv.
+
+
+\\\\\\\\ Dynamic \\\\\\\\\\\\\\\\
+Working on problem size N=1024 
+
+Our Elapsed time (Seconds): 0.001784061
+Reference Matmul Elapsed time (Seconds): 0.061544725
+Working on problem size N=2048 
+
+Our Elapsed time (Seconds): 0.002387312
+Reference Matmul Elapsed time (Seconds): 0.000654740
+Working on problem size N=4096 
+
+Our Elapsed time (Seconds): 0.009277327
+Reference Matmul Elapsed time (Seconds): 0.001913061
+Working on problem size N=8192 
+
+Our Elapsed time (Seconds): 0.036239057
+Reference Matmul Elapsed time (Seconds): 0.007286775
+Working on problem size N=16384 
+
+Our Elapsed time (Seconds): 0.144416427
+Reference Matmul Elapsed time (Seconds): 0.028427641
+Description:	OpenMP dgemv.
+
