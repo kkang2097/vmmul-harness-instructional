@@ -17,7 +17,7 @@ problem_sizes = df[var_names[0]].values.tolist()
 O0 = df[var_names[1]].values.tolist()
 O3 = df[var_names[2]].values.tolist()
 
-plt.title("Basic MM vs BLAS MM")
+plt.title("Basic MVM vs BLAS MVM")
 
 xlocs = [i for i in range(len(problem_sizes))]
 

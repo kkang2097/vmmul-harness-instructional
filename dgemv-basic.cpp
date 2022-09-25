@@ -22,6 +22,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    }
 
    //By the way, MATMUL operation is nm(2p-1) FLOPs for (nxp) * (pxm)
+   //So we do (n**2 * - n) for our MVM
 
 
 }

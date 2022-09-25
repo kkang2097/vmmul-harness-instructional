@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-fname = "pt2.txt"
+fname = "pt3.txt"
 df = pd.read_csv(fname, comment="#")
 print(df)
 
@@ -25,7 +25,7 @@ b64 = df[var_names[7]].values.tolist()
 
 
 
-plt.title("OpenMP-parallel Static VMM")
+plt.title("OpenMP-parallel Dynamic VMM")
 
 xlocs = [i for i in range(len(problem_sizes))]
 
